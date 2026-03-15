@@ -261,7 +261,20 @@
   </style>
 </head>
 <body>
-  <header class="hero">
+  <nav style="position: sticky; top: 0; z-index: 1000; backdrop-filter: blur(12px); background: rgba(10, 15, 30, 0.82); border-bottom: 1px solid rgba(255,255,255,0.08);">
+    <div class="container" style="display:flex; justify-content:space-between; align-items:center; padding:14px 0; gap:16px; flex-wrap:wrap;">
+      <div style="font-weight:800; letter-spacing:0.2px;">ML Algorithms Portfolio</div>
+      <div style="display:flex; gap:14px; flex-wrap:wrap;">
+        <a href="#overview" style="color: var(--text); text-decoration:none; font-size:0.96rem;">Overview</a>
+        <a href="#algorithms" style="color: var(--text); text-decoration:none; font-size:0.96rem;">Algorithms</a>
+        <a href="#diagrams" style="color: var(--text); text-decoration:none; font-size:0.96rem;">Diagrams</a>
+        <a href="#classification" style="color: var(--text); text-decoration:none; font-size:0.96rem;">Classification Rationale</a>
+        <a href="#reflection" style="color: var(--text); text-decoration:none; font-size:0.96rem;">Reflection</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero" id="overview">
     <div class="container hero-grid">
       <div>
         <div class="eyebrow">Portfolio Artifact • AIML / Model Development</div>
@@ -290,7 +303,10 @@
     <section class="container" id="algorithms">
       <h2>Algorithm Catalog</h2>
       <p class="section-text">
-        Each algorithm below includes its learning type, main application domains, a simple explanation of how it works, and an example use case. Together, these models illustrate how AI systems vary depending on the data structure, task, and expected output.
+        In Model Development, choosing the right algorithm is one of the most important decisions in the machine learning workflow. An algorithm is not selected in isolation; it is chosen based on the structure of the data, the type of learning required, the business or technical objective, and the level of interpretability needed. The catalog below includes ten widely used algorithms that represent core model development pathways across supervised learning, unsupervised learning, deep learning, and generative AI.
+      </p>
+      <p class="section-text">
+        Each algorithm card explains four things: the learning type, the main application domains, a concise description of how the model works, and a practical example showing where it would be used in the real world. This organization supports comparison across algorithms and helps show why some models are better for structured tabular datasets, while others are more effective for image recognition, language understanding, or content generation.
       </p>
 
       <div class="legend">
@@ -385,7 +401,7 @@
       </div>
     </section>
 
-    <section class="container">
+    <section class="container" id="diagrams">
       <h2>Visual Framework</h2>
       <p class="section-text">
         This framework shows how algorithms can be grouped first by learning style and then mapped to the AI domains where they are most commonly used. The diagrams below are designed to make the relationships between algorithm families, data types, and real-world tasks immediately visible.
@@ -505,13 +521,35 @@
     </section>
 
     <section class="container">
+      <section class="container" id="classification">
+      <div class="reflection">
+        <h2>Classification Rationale</h2>
+        <p>
+          This artifact classifies algorithms using two primary dimensions: <b>learning style</b> and <b>application domain</b>. I used learning style first because Model Development begins with a foundational question: is the model learning from labeled data, unlabeled data, or a more complex neural architecture designed for high-dimensional tasks? This distinction matters because supervised algorithms are generally used when a target outcome is known in advance, unsupervised algorithms are used when patterns must be discovered without labels, and deep learning models are often selected when the task involves highly complex data such as text, images, or generated outputs.
+        </p>
+        <p>
+          I then grouped algorithms by application domain because different types of data naturally align with different modeling strategies. <b>Tabular data</b> usually works well with models such as linear regression, decision trees, random forests, and clustering methods because these approaches perform effectively on structured columns and rows. <b>Computer vision</b> relies more heavily on neural architectures such as CNNs because image data contains spatial features that traditional tabular models do not capture well. <b>Natural language processing</b> is closely associated with transformers because language requires contextual understanding across long sequences of tokens. <b>Generative AI</b> includes models such as GANs and transformer-based architectures because the goal is not only to analyze data, but also to generate new content such as images, text, or synthetic examples.
+        </p>
+        <p>
+          This classification process reflects critical thinking from a model development perspective. Instead of grouping algorithms only by popularity, I grouped them according to how they are typically selected during the modeling lifecycle: by training signal, data type, and intended outcome. This method better reveals the relationships and differences among algorithms and makes the framework more useful as both a study tool and a professional portfolio artifact.
+        </p>
+      </div>
+    </section>
+
+    <section class="container" id="reflection">
       <div class="reflection">
         <h2>Portfolio Reflection</h2>
         <p>
-          Creating this portfolio artifact strengthened my understanding of how machine learning algorithms differ by learning style, domain, and practical purpose. Before organizing this framework, I understood many algorithms individually, but mapping them across tabular data, computer vision, NLP, and generative AI made their differences much clearer. I saw more clearly that traditional supervised models such as linear regression, decision trees, and random forests are especially effective for structured business data, while deep learning models such as CNNs and transformers are more suitable for image and language tasks.
+          Creating this portfolio artifact strengthened my understanding of how machine learning algorithms differ by learning style, domain, and practical purpose. In Model Development, it is easy to study algorithms as separate topics, but building this framework required me to compare them side by side and think more intentionally about how they relate to one another. I became more aware that model selection is not just a technical choice; it is a strategic decision that depends on the problem definition, data characteristics, expected outputs, and performance trade-offs.
         </p>
         <p>
-          I also gained a stronger appreciation for generative AI as a distinct and rapidly growing application space. Transformer-based models and GANs do more than analyze data; they create new content, which makes them especially important in modern AI development. Building this page helped me communicate technical ideas in a more visual and professional way, which is valuable for both academic work and career growth. This artifact demonstrates not only my knowledge of algorithms, but also my ability to organize, explain, and present AI concepts clearly for a portfolio audience.
+          One of the most valuable insights I gained was the difference between algorithms that are effective for structured tabular datasets and those that are designed for unstructured data such as images and language. For example, linear regression, decision trees, and random forests remain powerful because they are interpretable and effective for many business-oriented prediction problems. At the same time, CNNs and transformer models are necessary when the task requires deeper feature extraction from image or text data. This reinforced the idea that there is no universally best algorithm; the best model depends on the context of the problem.
+        </p>
+        <p>
+          I also gained a stronger understanding of generative AI as an extension of model development rather than a completely separate field. Models such as transformers and GANs demonstrate that machine learning can move beyond classification and prediction into the generation of entirely new content. That insight was especially meaningful because generative AI is now one of the most visible and rapidly evolving areas of artificial intelligence.
+        </p>
+        <p>
+          From a portfolio perspective, this assignment improved my ability to communicate technical knowledge visually and professionally. The use of diagrams, domain mapping, and classification logic helped me present complex information in a more organized and accessible way. Overall, this artifact demonstrates my growing ability to understand, classify, and explain machine learning algorithms in a way that connects course concepts from Model Development to real-world AI applications.
         </p>
       </div>
     </section>
