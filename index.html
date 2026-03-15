@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Machine Learning Algorithms Portfolio | Shiyana Jayanesan Shylaja</title>
+  <style>
+    :root {
+      --bg: #0b1020;
+      --card: #121933;
+      --card-2: #182246;
+      --text: #edf2ff;
+      --muted: #b7c2e0;
+      --line: rgba(255,255,255,0.1);
+      --tabular: #5aa9ff;
+      --cv: #58d68d;
+      --nlp: #bb8cff;
+      --genai: #ffb454;
+      --accent: #7c9cff;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      background: linear-gradient(180deg, #0a0f1e 0%, #0f1730 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .container {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .hero {
+      padding: 72px 0 40px;
+      background: radial-gradient(circle at top right, rgba(124,156,255,0.18), transparent 28%),
+                  radial-gradient(circle at top left, rgba(187,140,255,0.14), transparent 24%);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(124,156,255,0.12);
+      color: #dce5ff;
+      border: 1px solid rgba(124,156,255,0.25);
+      font-size: 0.92rem;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      line-height: 1.1;
+      margin: 0 0 16px;
+    }
+
+    .lead {
+      max-width: 850px;
+      color: var(--muted);
+      font-size: 1.05rem;
+      margin-bottom: 22px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    .hero-card, .card {
+      background: rgba(18, 25, 51, 0.88);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 24px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+    }
+
+    .meta {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 20px;
+    }
+
+    .meta .mini {
+      background: var(--card-2);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 14px 16px;
+    }
+
+    .mini b { display: block; margin-bottom: 4px; }
+    .mini span { color: var(--muted); font-size: 0.95rem; }
+
+    section {
+      padding: 34px 0;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      margin: 0 0 10px;
+    }
+
+    .section-text {
+      color: var(--muted);
+      margin: 0 0 24px;
+      max-width: 900px;
+    }
+
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--line);
+      font-size: 0.92rem;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .algo-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 20px;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .algo-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(124,156,255,0.45);
+    }
+
+    .algo-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: start;
+      margin-bottom: 12px;
+    }
+
+    .algo-top h3 {
+      margin: 0;
+      font-size: 1.2rem;
+    }
+
+    .type {
+      font-size: 0.82rem;
+      padding: 6px 10px;
+      border-radius: 999px;
+      white-space: nowrap;
+      border: 1px solid var(--line);
+      color: #dfe6ff;
+      background: rgba(255,255,255,0.04);
+    }
+
+    .domains {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 12px 0;
+    }
+
+    .domain {
+      font-size: 0.8rem;
+      border-radius: 999px;
+      padding: 6px 10px;
+      color: #08111f;
+      font-weight: 700;
+    }
+
+    .algo-card p {
+      margin: 10px 0 0;
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .framework {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .framework-col {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 22px;
+    }
+
+    .framework-col h3 { margin-top: 0; }
+
+    .flow {
+      display: grid;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .flow-step {
+      background: var(--card-2);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 14px 16px;
+    }
+
+    .reflection {
+      background: linear-gradient(180deg, rgba(124,156,255,0.08), rgba(255,255,255,0.03));
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 26px;
+    }
+
+    footer {
+      padding: 32px 0 56px;
+      color: var(--muted);
+      text-align: center;
+      border-top: 1px solid var(--line);
+      margin-top: 24px;
+    }
+
+    a.button {
+      display: inline-block;
+      margin-top: 10px;
+      text-decoration: none;
+      color: #08111f;
+      background: linear-gradient(135deg, #cdd9ff, #8cb4ff);
+      padding: 12px 18px;
+      border-radius: 14px;
+      font-weight: 700;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid, .framework, .grid { grid-template-columns: 1fr; }
+      .meta { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow">Portfolio Artifact • AIML / Model Development</div>
+        <h1>Machine Learning Algorithms and Their Application Domains</h1>
+        <p class="lead">
+          This portfolio page presents a visual framework of key machine learning algorithms, grouped by learning style and mapped to major AI application domains: tabular data, computer vision, natural language processing, and generative AI. The goal is to show not only what each algorithm does, but also where it fits in practical, real-world problem solving.
+        </p>
+        <a class="button" href="#algorithms">Explore the Algorithms</a>
+      </div>
+      <aside class="hero-card">
+        <h3 style="margin-top:0;">Artifact Overview</h3>
+        <p style="color: var(--muted); margin-bottom: 0;">
+          Created by <b style="color: var(--text);">Shiyana Jayanesan Shylaja</b> as a professional portfolio artifact to demonstrate understanding of foundational AI/ML algorithms and their real-world relevance.
+        </p>
+        <div class="meta">
+          <div class="mini"><b>Course Context</b><span>Model Development / Machine Learning</span></div>
+          <div class="mini"><b>Focus</b><span>Algorithm types, domains, and use cases</span></div>
+          <div class="mini"><b>Included</b><span>10 core algorithms</span></div>
+          <div class="mini"><b>Domains</b><span>Tabular, CV, NLP, Generative AI</span></div>
+        </div>
+      </aside>
+    </div>
+  </header>
+
+  <main>
+    <section class="container" id="algorithms">
+      <h2>Algorithm Catalog</h2>
+      <p class="section-text">
+        Each algorithm below includes its learning type, main application domains, a simple explanation of how it works, and an example use case. Together, these models illustrate how AI systems vary depending on the data structure, task, and expected output.
+      </p>
+
+      <div class="legend">
+        <span class="pill"><span class="dot" style="background: var(--tabular);"></span> Tabular Data</span>
+        <span class="pill"><span class="dot" style="background: var(--cv);"></span> Computer Vision</span>
+        <span class="pill"><span class="dot" style="background: var(--nlp);"></span> NLP</span>
+        <span class="pill"><span class="dot" style="background: var(--genai);"></span> Generative AI</span>
+      </div>
+
+      <div class="grid">
+        <article class="algo-card">
+          <div class="algo-top"><h3>1. Linear Regression</h3><span class="type">Supervised</span></div>
+          <div class="domains"><span class="domain" style="background: var(--tabular);">Tabular Data</span></div>
+          <p><b>How it works:</b> Models the relationship between input variables and a continuous output by fitting a best-fit line.</p>
+          <p><b>Use case:</b> Predicting housing prices, demand forecasting, and revenue estimation.</p>
+        </article>
+
+        <article class="algo-card">
+          <div class="algo-top"><h3>2. Decision Tree</h3><span class="type">Supervised</span></div>
+          <div class="domains"><span class="domain" style="background: var(--tabular);">Tabular Data</span></div>
+          <p><b>How it works:</b> Splits data into branches based on feature rules until it reaches a prediction or class label.</p>
+          <p><b>Use case:</b> Loan approval, customer churn prediction, and medical decision support.</p>
+        </article>
+
+        <article class="algo-card">
+          <div class="algo-top"><h3>3. Random Forest</h3><span class="type">Supervised</span></div>
+          <div class="domains"><span class="domain" style="background: var(--tabular);">Tabular Data</span></div>
+          <p><b>How it works:</b> Combines many decision trees and averages their predictions to improve accuracy and reduce overfitting.</p>
+          <p><b>Use case:</b> Fraud detection, credit scoring, and healthcare risk prediction.</p>
+        </article>
+
+        <article class="algo-card">
+          <div class="algo-top"><h3>4. Support Vector Machine (SVM)</h3><span class="type">Supervised</span></div>
+          <div class="domains">
+            <span class="domain" style="background: var(--tabular);">Tabular Data</span>
+            <span class="domain" style="background: var(--cv);">Computer Vision</span>
+          </div>
+          <p><b>How it works:</b> Finds the optimal boundary that separates classes with the maximum margin.</p>
+          <p><b>Use case:</b> Email spam classification, handwriting recognition, and image categorization.</p>
+        </article>
+
+        <article class="algo-card">
+          <div class="algo-top"><h3>5. K-Means Clustering</h3><span class="type">Unsupervised</span></div>
+          <div class="domains"><span class="domain" style="background: var(--tabular);">Tabular Data</span></div>
+          <p><b>How it works:</b> Groups similar data points into clusters by minimizing distance from each cluster center.</p>
+          <p><b>Use case:</b> Customer segmentation, behavior analysis, and anomaly exploration.</p>
+        </article>
+
+        <article class="algo-card">
+          <div class="algo-top"><h3>6. Hierarchical Clustering</h3><span class="type">Unsupervised</span></div>
+          <div class="domains"><span class="domain" style="background: var(--tabular);">Tabular Data</span></div>
+          <p><b>How it works:</b> Builds a tree of clusters by iteratively merging or splitting groups based on similarity.</p>
+          <p><b>Use case:</b> Gene expression analysis, market segmentation, and document grouping.</p>
+        </article>
+
+        <article class="algo-card">
+          <div class="algo-top"><h3>7. Artificial Neural Network (ANN)</h3><span class="type">Supervised / Deep Learning</span></div>
+          <div class="domains">
+            <span class="domain" style="background: var(--cv);">Computer Vision</span>
+            <span class="domain" style="background: var(--nlp);">NLP</span>
+          </div>
+          <p><b>How it works:</b> Uses layers of interconnected neurons to learn complex, nonlinear relationships in data.</p>
+          <p><b>Use case:</b> Pattern recognition, sentiment classification, and predictive analytics.</p>
+        </article>
+
+        <article class="algo-card">
+          <div class="algo-top"><h3>8. Convolutional Neural Network (CNN)</h3><span class="type">Supervised / Deep Learning</span></div>
+          <div class="domains"><span class="domain" style="background: var(--cv);">Computer Vision</span></div>
+          <p><b>How it works:</b> Uses convolutional filters to detect spatial features like edges, textures, and objects in images.</p>
+          <p><b>Use case:</b> Facial recognition, autonomous driving, and medical image diagnosis.</p>
+        </article>
+
+        <article class="algo-card">
+          <div class="algo-top"><h3>9. Transformer Models</h3><span class="type">Deep Learning</span></div>
+          <div class="domains">
+            <span class="domain" style="background: var(--nlp);">NLP</span>
+            <span class="domain" style="background: var(--genai);">Generative AI</span>
+          </div>
+          <p><b>How it works:</b> Uses attention mechanisms to understand context and relationships across sequences of text or tokens.</p>
+          <p><b>Use case:</b> Chatbots, machine translation, summarization, and large language models.</p>
+        </article>
+
+        <article class="algo-card">
+          <div class="algo-top"><h3>10. Generative Adversarial Network (GAN)</h3><span class="type">Generative Deep Learning</span></div>
+          <div class="domains">
+            <span class="domain" style="background: var(--genai);">Generative AI</span>
+            <span class="domain" style="background: var(--cv);">Computer Vision</span>
+          </div>
+          <p><b>How it works:</b> Trains a generator and discriminator together so the model learns to create realistic synthetic data.</p>
+          <p><b>Use case:</b> AI-generated images, synthetic training data, style transfer, and media generation.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="container">
+      <h2>Visual Framework</h2>
+      <p class="section-text">
+        This framework shows how algorithms can be grouped first by learning style and then mapped to the AI domains where they are most commonly used.
+      </p>
+      <div class="framework">
+        <div class="framework-col">
+          <h3>Learning Style Categories</h3>
+          <div class="flow">
+            <div class="flow-step"><b>Supervised Learning</b><br>Trains on labeled data to predict outputs or classify observations.<br><span style="color: var(--muted);">Examples: Linear Regression, Decision Tree, Random Forest, SVM</span></div>
+            <div class="flow-step"><b>Unsupervised Learning</b><br>Finds patterns and hidden structures in unlabeled data.<br><span style="color: var(--muted);">Examples: K-Means, Hierarchical Clustering</span></div>
+            <div class="flow-step"><b>Deep Learning</b><br>Uses multi-layer neural networks for highly complex tasks involving images, text, and generation.<br><span style="color: var(--muted);">Examples: ANN, CNN, Transformers, GANs</span></div>
+          </div>
+        </div>
+        <div class="framework-col">
+          <h3>Primary Application Domains</h3>
+          <div class="flow">
+            <div class="flow-step"><b>Tabular Data</b><br>Structured rows and columns used in forecasting, finance, operations, and business analytics.</div>
+            <div class="flow-step"><b>Computer Vision</b><br>Image and video understanding, including object recognition, diagnosis, and scene analysis.</div>
+            <div class="flow-step"><b>Natural Language Processing</b><br>Text and language understanding for translation, summarization, sentiment, and conversation.</div>
+            <div class="flow-step"><b>Generative AI</b><br>Models that create new content such as text, images, audio, or synthetic data.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container">
+      <div class="reflection">
+        <h2>Portfolio Reflection</h2>
+        <p>
+          Creating this portfolio artifact strengthened my understanding of how machine learning algorithms differ by learning style, domain, and practical purpose. Before organizing this framework, I understood many algorithms individually, but mapping them across tabular data, computer vision, NLP, and generative AI made their differences much clearer. I saw more clearly that traditional supervised models such as linear regression, decision trees, and random forests are especially effective for structured business data, while deep learning models such as CNNs and transformers are more suitable for image and language tasks.
+        </p>
+        <p>
+          I also gained a stronger appreciation for generative AI as a distinct and rapidly growing application space. Transformer-based models and GANs do more than analyze data; they create new content, which makes them especially important in modern AI development. Building this page helped me communicate technical ideas in a more visual and professional way, which is valuable for both academic work and career growth. This artifact demonstrates not only my knowledge of algorithms, but also my ability to organize, explain, and present AI concepts clearly for a portfolio audience.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p><b>Machine Learning Algorithms Portfolio Artifact</b></p>
+      <p>Prepared by Shiyana Jayanesan Shylaja for academic and professional portfolio use.</p>
+    </div>
+  </footer>
+</body>
+</html>
